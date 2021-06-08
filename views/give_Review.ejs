@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Create Event</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="/give_Review/css/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="/give_Review/css/style.css" />
+
+
+</head>
+
+<body>
+	<div id="booking" class="section" style="background-image: none;background-color: aliceblue;">
+		<div class="section-center">
+			<div class="container" >
+				<div class="row">
+					<div class="booking-form" >
+						<form method="POST" action="/giveReview/<%=eventID._id%>" >
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Event Name</span>
+										<input event_name='event_name'class="form-control" type="text" value="<%=eventID.event_name%>" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Your Name</span>
+										<input name="name"class="form-control" type="text" placeholder="Your Name" required>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-10">
+									<div class="form-group">
+										<span class="form-label">Event Description</span>
+										<textarea name="review" class='form-control' required placeholder="Event Review" autofocus = "autofocus" style="width: 1090px;height: 350px;font-size: 20px;border-radius:40px;text-indent: 25px; font-size: 15px;">
+										</textarea>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div style="text-align:center;">
+									<div class="form-btn">
+										<button class="submit-btn">Submit</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

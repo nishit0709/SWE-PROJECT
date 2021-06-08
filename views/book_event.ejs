@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Booking Form HTML Template</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="./book_ticket/css/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="./book_ticket/css/style.css" />
+
+</head>
+
+<body>
+	<div id="booking" class="section" style="background-image: none;background-color: aliceblue;">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<form method="POST" action="/bookEvent" >
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Event Name</span>
+										<select class="form-control" name="event_name" id='eventName'>
+											<%for(let i=0;i<eventID.length;i++){ %>
+												<option><%= eventID[i].event_name %></option>
+											<%}%>		
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Date of Event</span>
+										<input class="form-control" type="date" name="date" required>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Time</span>
+										<input class="form-control" type="time" name="time" required>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label" id = 'remaining'>Number of Tickets</span>
+										<select class="form-control" name="num_of_tickets" >
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+											<option>6</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div style="text-align: center;">
+									<div class="form-btn">
+										<button class="submit-btn">Book Ticket</button>
+									</div>
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

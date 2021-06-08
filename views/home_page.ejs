@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home page</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="./home_page/css/bootstrap.css">
+    <link rel="stylesheet" href="./home_page/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./home_page/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./home_page/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./home_page/style.css">
+    <link rel="stylesheet" href="./home_page/responsive.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="logo">
+                            <h2><a href="#">Book My Day</a></h2>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        async function logout(){
+                            await fetch('/',{
+                                method: 'POST'
+                            })
+                        }
+                    </script>
+
+
+
+                    <div class="col-md-10">
+                        <div class="menu">
+                            <ul>
+                                <li><a href="/createEvent">Create an Event</a></li>
+                                <% if(isLoggedIn){ %>
+                                    <li><a href="/dashboard">Dashboard</a></li>
+                                    <li class="active"><a href='/' onclick="logout()" >Signout</a></li>
+                                <% }else{ %>
+                                    <li class="active"><a href="/login">Login/Signup</a></li>
+                                <% }%>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="bg-text-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bg-text">
+                            <h3>Book My Day</h3>
+                            <p>Getting bored during this pandemic , here is India's first democratised platform for organizing and joining events occuring all over India . Don't forget to book your day. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="blog-post-area">
+            <div class="container">
+                <div class="row">
+                    <div class="blog-post-area-style">
+                            <div class="col-md-12">
+                                <div class="single-post-big">
+                                    <div class="big-image">
+                                        <img src="./home_page/img/origami-day-fun.jpg" alt="">
+                                    </div>
+                                    <div class="big-text">
+                                        <h3><a href="#">About</a></h3>
+                                        <p>During this pandemic we all have shifted our lives to online mode here on this platform we promise to provide you all the top events occuring in India online and keep your day busy.</p>
+                                        <p>Event creation is largely monopolized by big companies , here we give you a chance to organize your own event contact with people online and spread your talent using our platform.</p>
+                                        <h4><span class="date">25 February 2021</span><span class="author">Posted By: <span class="author-name">Book My Day</span></span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <% for(let i=0;i<eventList.length;i++){ %>
+                                <div class="col-md-3">
+                                    <div class="single-post">
+                                        <img src= "<%= eventList[i].images%>">
+                                        <h3><a href= "/viewEvent/<%= eventList[i]._id %>"><%= eventList[i].event_name %></a></h3>
+                                        <h4><span>Posted By: <span class="author-name"><%= eventList[i].organizer_name %></span></span>
+                                        </h4>
+                                        <p><%= eventList[i].event_sub_des %></p>
+                                        <h4><span><%= eventList[i].event_date %></span></h4>
+                                    </div>
+                                </div>
+                            <% }; %>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br><br>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-bg">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="footer-menu">
+                                    </div>
+                                </div>
+
+                            </div> .
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./home_page/js/jquery-3.1.1.min.js"></script>
+    <script src="./home_page/js/bootstrap.min.js"></script>
+    <script src="./home_page/js/owl.carousel.min.js"></script>
+    <script src="./home_page/js/active.js"></script>
+</body>
+
+</html>
